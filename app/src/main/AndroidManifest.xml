@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sample.broadcastreceiver">
 
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,22 +16,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- The broadcast receiver will be executed even when the App itself is not running -->
-        <!-- By putting our Broadcast Receiver directly on the Manifest file we are registering it statically -->
-        <!-- The other option is registering it dynamically -->
-        <receiver android:name="com.sample.broadcastreceiver.ExampleBroadcastReceiver">
-            <!-- They are new entry points for our App, because the system will start our App just for reacting to them -->
-            <!-- It's called Implicit broadcast, because our App is not called directly it just subscribe to these events -->
-            <!-- On the other hand, Explicit Broadcast will call our App directly by its name -->
-            <intent-filter>
-                <!-- Listening to the Device boot completed action -->
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
-                <category android:name="android.intent.category.DEFAULT"/>
-                <!-- We cannot listen to this Broadcast if it is registered on the manifest like this and we are working with Nougat (API 24) of higher -->
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-            </intent-filter>
-        </receiver>
     </application>
 
 </manifest>
