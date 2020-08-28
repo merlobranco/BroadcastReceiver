@@ -20,12 +20,12 @@
         <!-- exported:  (with intent filter) = true -->
         <!--            (without intent filter) = false -->
         <receiver android:name=".OrderedReceiver2">
-            <intent-filter>
+            <intent-filter android:priority="2">
                 <action android:name="com.sample.EXAMPLE_ACTION" />
             </intent-filter>
         </receiver>
         <receiver android:name=".OrderedReceiver3">
-            <intent-filter>
+            <intent-filter android:priority="3">
                 <action android:name="com.sample.EXAMPLE_ACTION" />
             </intent-filter>
         </receiver>

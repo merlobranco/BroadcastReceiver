@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
 
         orderedReceiver1 = OrderedReceiver1()
         val filter = IntentFilter("com.sample.EXAMPLE_ACTION")
+        filter.priority = 1
         registerReceiver(orderedReceiver1, filter)
     }
 
