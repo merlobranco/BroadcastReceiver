@@ -1,9 +1,12 @@
 package com.sample.broadcastreceiver
 
+import android.content.IntentFilter
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var orderedReceiver1: OrderedReceiver1
 
     /**
      * With following lifecycle methods the broadcast receiver is alive while the activity is displayed
@@ -13,5 +16,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        orderedReceiver1 = OrderedReceiver1()
+        val filter = IntentFilter("com.sample.EXAMPLE_ACTION")
+        registerReceiver(orderedReceiver1, filter)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        unregisterReceiver(orderedReceiver1)
     }
 }
