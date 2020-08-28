@@ -19,8 +19,11 @@
         <!-- Since we are not providing an intent filter we should set exported = true (This receiver can be triggered by other Apps) -->
         <!-- exported:  (with intent filter) = true -->
         <!--            (without intent filter) = false -->
-        <receiver android:name=".ExampleBroadcastReceiver"
-            android:exported="true"/>
+        <receiver android:name=".ExampleBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.sample.EXAMPLE_ACTION" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
