@@ -1,14 +1,9 @@
 package com.sample.broadcastreceiver
 
-import android.content.IntentFilter
-import android.net.ConnectivityManager
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
-
-    private var exampleBroadcastReceiver = ExampleBroadcastReceiver()
 
     /**
      * With following lifecycle methods the broadcast receiver is alive while the activity is displayed
@@ -18,12 +13,5 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val filter = IntentFilter("com.sample.broadcastreceiver.EXAMPLE_ACTION")
-        registerReceiver(exampleBroadcastReceiver, filter)
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        unregisterReceiver(exampleBroadcastReceiver)
     }
 }

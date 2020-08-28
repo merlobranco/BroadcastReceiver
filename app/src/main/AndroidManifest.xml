@@ -16,6 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- Since we are not providing an intent filter we should set exported = true (This receiver can be triggered by other Apps) -->
+        <!-- exported:  (with intent filter) = true -->
+        <!--            (without intent filter) = false -->
+        <receiver android:name=".ExampleBroadcastReceiver"
+            android:exported="true"/>
     </application>
 
 </manifest>
