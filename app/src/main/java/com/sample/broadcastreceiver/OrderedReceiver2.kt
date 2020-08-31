@@ -27,6 +27,8 @@ class OrderedReceiver2 : BroadcastReceiver() {
 
         setResult(rc, rd, re)
 
+        abortBroadcast()
+
 //        Toast.makeText(context, "OR2: $message", Toast.LENGTH_SHORT).show()
     }
 }
