@@ -2,13 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sample.broadcastreceiver">
 
-    <!-- Defining our custom permissions-->
-    <!-- It should be defined in a way that is not causing any conflict with another user defined permissions -->
-    <!-- Signature means that only apps that are sent with same key can use it. -->
-    <!-- This is useful if we want to limit this functionality to multiple of our own apps nut keep unavailable for other apps.  -->
-    <permission android:name="com.sample.merlobranco.CUSTOM_PERMISSION" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -23,21 +16,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- Since we are not providing an intent filter we should set exported = true (This receiver can be triggered by other Apps) -->
-        <!-- exported:  (with intent filter) = true -->
-        <!--            (without intent filter) = false -->
-        <receiver android:name=".OrderedReceiver2"
-            android:permission="android.permission.INTERNET"> <!-- Example of system predefined permission -->
-            <intent-filter android:priority="2">
-                <action android:name="com.sample.EXAMPLE_ACTION" />
-            </intent-filter>
-        </receiver>
-        <receiver android:name=".OrderedReceiver3"
-            android:permission="com.sample.merlobranco.CUSTOM_PERMISSION"> <!-- Using custom defined permission -->
-            <intent-filter android:priority="3">
-                <action android:name="com.sample.EXAMPLE_ACTION" />
-            </intent-filter>
-        </receiver>
     </application>
 
 </manifest>
