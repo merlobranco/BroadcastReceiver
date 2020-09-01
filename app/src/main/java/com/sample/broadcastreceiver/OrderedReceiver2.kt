@@ -25,6 +25,6 @@ class OrderedReceiver2 : BroadcastReceiver() {
 
         setResult(rc, rd, re)
 
-        abortBroadcast()
+//        abortBroadcast()
     }
 }
