@@ -1,5 +1,6 @@
 package com.sample.broadcastreceiver
 
+import android.Manifest
 import android.content.IntentFilter
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -20,7 +21,8 @@ class MainActivity : AppCompatActivity() {
         orderedReceiver1 = OrderedReceiver1()
         val filter = IntentFilter("com.sample.EXAMPLE_ACTION")
         filter.priority = 1
-        registerReceiver(orderedReceiver1, filter)
+        // On the fourth parameter we could pass a new thread in order to run it separately on it
+        registerReceiver(orderedReceiver1, filter, Manifest.permission.VIBRATE, null)
     }
 
     override fun onDestroy() {

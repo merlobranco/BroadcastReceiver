@@ -7,8 +7,6 @@ import android.widget.Toast
 
 class OrderedReceiver3 : BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {
-        //        val message = intent!!.getStringExtra("ebr")
-
         // Retrieving the 3 pieces of data provided by the previous broadcast receiver
         var rc = resultCode
         var rd = resultData
@@ -26,7 +24,5 @@ class OrderedReceiver3 : BroadcastReceiver() {
         re.putString("stringExtra", se)
 
         setResult(rc, rd, re)
-
-//        Toast.makeText(context, "OR3: $message", Toast.LENGTH_SHORT).show()
     }
 }
