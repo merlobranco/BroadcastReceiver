@@ -6,8 +6,8 @@
     <!-- It should be defined in a way that is not causing any conflict with another user defined permissions -->
     <!-- Signature means that only apps that are sent with same key can use it. -->
     <!-- This is useful if we want to limit this functionality to multiple of our own apps nut keep unavailable for other apps.  -->
-    <permission android:name="com.sample.merlobranco.CUSTOM_PERMISSION"
-        />
+    <permission android:name="com.sample.merlobranco.CUSTOM_PERMISSION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:allowBackup="true"
